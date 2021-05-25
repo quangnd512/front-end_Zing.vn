@@ -1,0 +1,64 @@
+@screen__xxs: 320px;
+@screen__xs: 480px;
+@screen__s: 640px; //mobile
+@screen__m: 768px;
+@screen__l: 1024px; //laptop
+@screen__xl: 1440px;
+
+// 1. Mobile
+.media-mobile(@rules) {
+	@media screen and (max-width: @screen__s) {
+		@rules();
+	}
+}
+
+// 2. Tablet 
+.media-tablet(@rules) {
+	@media screen and (min-width: (@screen__s + 1px)) and (max-width: (@screen__m - 1px)) {
+		@rules();
+	}
+}
+
+// 3. Laptop
+.media-desktop(@rules) {
+	@media screen and (min-width: @screen__m) {
+		@rules();
+	}
+}
+
+// 4. Custom
+.media-custom-max(@width, @rules) {
+	@media screen and (max-width: @width) {
+		@rules();
+	}
+}
+
+.media-custom-min(@width, @rules) {
+	@media screen and (min-width: @width) {
+		@rules();
+	}
+}
+
+// 5. How to use
+/**
+Input: 
+body {
+    color: blue;
+
+    .media-phone({
+        color: red;
+    });
+}
+
+
+Output:
+body {
+    color: blue;
+}
+
+@media screen and (max-width: @screen-phone) {
+    body {
+        color: red;
+    }
+}
+*/
