@@ -14,14 +14,14 @@
 
 // 2. Tablet 
 .media-tablet(@rules) {
-	@media screen and (min-width: (@screen__s + 1px)) and (max-width: (@screen__m - 1px)) {
+	@media screen and (min-width: (@screen__s + 1px)) and (max-width: (@screen__l - 1px)) {
 		@rules();
 	}
 }
 
 // 3. Laptop
 .media-desktop(@rules) {
-	@media screen and (min-width: @screen__m) {
+	@media screen and (min-width: @screen__l) {
 		@rules();
 	}
 }
